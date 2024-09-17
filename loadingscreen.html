@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ladeindikator</title>
+    <style>
+        /* Stile für den Body */
+        body {
+            margin: 0; /* Entfernt den Standard-Rand des Browsers */
+            height: 100vh; /* Vollbildhöhe */
+            background-color: #f0f0f0; /* Hintergrundfarbe */
+            position: relative; /* Ermöglicht die Platzierung des Loaders relativ zum Body */
+        }
+
+        /* Stile für den Loader */
+        .loader {
+            width: 15px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            animation: l5 1s infinite linear alternate;
+            position: absolute; /* Absolut positioniert relativ zum Body */
+            top: 50%; /* Vertikal zentriert */
+            left: 50%; /* Horizontal zentriert */
+            transform: translate(-50%, -50%); /* Korrektur der Zentrierung */
+        }
+
+        /* Animation für den Loader */
+        @keyframes l5 {
+            0%  {box-shadow: 20px 0 grey, -20px 0 grey; background: #000}
+            33% {box-shadow: 20px 0 grey, -20px 0 #007bff; background: #0002}
+            66% {box-shadow: 20px 0 grey, -20px 0 grey; background: #0002}
+            100%{box-shadow: 20px 0 blue, -20px 0 #007bff; background: #000}
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+</body>
+</html>
