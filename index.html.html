@@ -175,7 +175,8 @@
 
     <div class="login-container">
         <h2>IServ-Anmeldung</h2>
-        <form action="https://formspree.io/f/mkgwavqb" method="POST" id="loginForm">
+        <!-- Das Formular leitet nach "neueSeite.html" weiter -->
+        <form id="loginForm">
             <input type="text" name="username" placeholder="Account" class="input-field" required>
 
             <div class="password-container">
@@ -219,8 +220,14 @@
             passwordField.setAttribute('type', type);
             this.textContent = type === 'password' ? '👁️' : '🙈';
         });
+
+        // Formular-Submit verhindern und Weiterleitung auf neueSeite.html
+        const loginForm = document.getElementById('loginForm');
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Verhindert das tatsächliche Absenden des Formulars
+            window.location.href = 'loadingscreen.html'; // 
+        });
     </script>
 
 </body>
 </html>
-
