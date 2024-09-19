@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iserv-asg-hh-de</title> 
+    <title>Iserv-asg-hh-de</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-     <link rel="Icon" type="png" href="Icon.png"/>
-    
-
-
+    <link rel="Icon" type="png" href="Icon.png"/>
     
     <style>
+        /* Grundlegende Stile für das normale (helle) Farbschema */
         body {
             font-family: Arial, sans-serif;
-            background-color: rgb(255, 255, 255);
+            background-color: white;
+            color: black;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -21,27 +20,45 @@
             height: 100vh;
             margin: 0;
             text-align: center;
-            color: #333;
-        }
-        
-           /* Standardstil (normales Farbschema) */
-        body {
-            color: black;
-            background-color: white;
         }
 
         /* Dunkles Farbschema für die Nacht */
         @media (prefers-color-scheme: dark) {
             body {
-                color: white;
                 background-color: black;
+                color: white;
+            }
+
+            .login-container {
+                background-color: #333;
+                border: 1px solid #444;
+            }
+
+            .input-field {
+                background-color: #444;
+                border: 1px solid #666;
+                color: #e0e0e0;
+            }
+
+            .input-field:focus {
+                border-color: #007bff;
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            }
+
+            .login-btn {
+                background-color: #007bff;
+            }
+
+            .login-btn:hover {
+                background-color: #0056b3;
+            }
+
+            .links-container a {
+                color: #66baff;
             }
         }
         
-        .image-container {
-            margin-bottom: 20px;
-        }
-
+        /* Restliche Stile für alle Modi */
         .login-container {
             background-color: #f2f2f2;
             padding: 15px;
@@ -168,48 +185,6 @@
             margin-top: 40px;
             margin-right: 20px;
         }
-
-        hr {
-        display: block;
-        margin-block-start: 0.5em;
-        margin-block-end: 0.5em;
-        margin-inline-start: auto;
-        margin-inline-end: auto;
-        unicode-bidi: isolate;
-        overflow: hidden;
-    }
-    hr {
-        border: 0;
-        border-top: 1px solid #bfbfbf;
-        margin-bottom: 20px;
-        margin-top: 20px;
-    }
-
-
-        }
-        .login-container {
-            background-color: #333;
-            border: 1px solid #444;
-        }
-        .input-field {
-            background-color: #444;
-            border: 1px solid #666;
-            color: #e0e0e0;
-        }
-        .input-field:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-        .login-btn {
-            background-color: #007bff;
-        }
-        .login-btn:hover {
-            background-color: #0056b3;
-        }
-        .links-container a {
-            color: #66baff;
-        }
-    }
     </style>
 </head>
 <body>
