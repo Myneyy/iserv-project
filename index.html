@@ -24,9 +24,19 @@
             color: #333;
         }
         
-        .dark-mode {
-          background-color: black;
-          color: white;
+        @media (prefers-color-scheme: dark) {
+          /* dunkles Farbschema für die Nacht */
+          body {
+            color: white;
+            background: black;
+          }
+        }
+        @media (prefers-color-scheme: light) {
+          /* helles Farbschema für den Tag */
+            body {
+            color: black;
+            background: white;
+            }
         }
         .image-container {
             margin-bottom: 20px;
