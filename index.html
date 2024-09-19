@@ -6,13 +6,10 @@
     <title>Iserv-asg-hh-de</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="Icon" type="png" href="Icon.png"/>
-    
     <style>
-        /* Grundlegende Stile für das normale (helle) Farbschema */
         body {
             font-family: Arial, sans-serif;
-            background-color: white;
-            color: black;
+            background-color: rgb(255, 255, 255);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -20,45 +17,13 @@
             height: 100vh;
             margin: 0;
             text-align: center;
+            color: #333;
         }
 
-        /* Dunkles Farbschema für die Nacht */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: black;
-                color: white;
-            }
-
-            .login-container {
-                background-color: #333;
-                border: 1px solid #444;
-            }
-
-            .input-field {
-                background-color: #444;
-                border: 1px solid #666;
-                color: #e0e0e0;
-            }
-
-            .input-field:focus {
-                border-color: #007bff;
-                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-            }
-
-            .login-btn {
-                background-color: #007bff;
-            }
-
-            .login-btn:hover {
-                background-color: #0056b3;
-            }
-
-            .links-container a {
-                color: #66baff;
-            }
+        .image-container {
+            margin-bottom: 20px;
         }
-        
-        /* Restliche Stile für alle Modi */
+
         .login-container {
             background-color: #f2f2f2;
             padding: 15px;
@@ -69,7 +34,7 @@
             border: 1px solid #f2f2f2;
             margin: 0 auto;
         }
-        
+
         h2 {
             margin: 0 0 15px 0;
             font-size: 13px;
@@ -185,17 +150,70 @@
             margin-top: 40px;
             margin-right: 20px;
         }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #bfbfbf;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        /* Dark Mode Styles */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1e1e1e;
+                color: #e0e0e0;
+            }
+
+            .login-container {
+                background-color: #333;
+                border: 1px solid #444;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            }
+
+            h2 {
+                color: #e0e0e0;
+            }
+
+            .input-field {
+                background-color: #444;
+                border: 1px solid #666;
+                color: #e0e0e0;
+            }
+
+            .input-field:focus {
+                border-color: #90caf9;
+                box-shadow: 0 0 5px rgba(144, 202, 249, 0.5);
+            }
+
+            .login-btn {
+                background-color: #2196f3;
+            }
+
+            .login-btn:hover {
+                background-color: #1976d2;
+            }
+
+            .links-container a {
+                color: #90caf9;
+            }
+
+            hr {
+                border-top: 1px solid #666;
+            }
+        }
     </style>
 </head>
 <body>
 
     <!-- Bild oben -->
     <div class="image-container">
-        <img src="IMG_0766.png" alt="Bild oben">
+        <img src="iserv image.png" alt="Bild oben">
     </div>
 
     <div class="login-container">
         <h2>IServ-Anmeldung</h2>
+        <!-- Das Formular leitet nach "neueSeite.html" weiter -->
         <form id="loginForm">
             <input type="text" name="username" placeholder="Account" class="input-field" required>
 
@@ -219,33 +237,25 @@
             <hr>
 
             <div class="links-container">
-                <a href="https://as-gym-hh.de/iserv/auth/public/password_reset">Passwort vergessen?</a>
-                <a href="https://doku.iserv.de/web/#anmeldung">Hilfe</a>
+                <a href="passwort vergessen.html">Passwort vergessen?</a>
+                <a href="#">Hilfe</a>
             </div>
         </form>
     </div>
 
     <!-- Bild unten -->
     <div class="image-container bottom-image">
-        <img src="IMG_0767.png" alt="Bild unten">
+        <img src="bild unten.png" alt="Bild unten">
     </div>
 
     <script>
-        // Passwort anzeigen/verbergen
-        const togglePassword = document.querySelector('.toggle-password');
-        const passwordField = document.querySelector('input[name="password"]');
-
-        togglePassword.addEventListener('click', function () {
-            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordField.setAttribute('type', type);
-            this.textContent = type === 'password' ? '👁️' : '🙈';
-        });
+       
 
         // Formular-Submit verhindern und Weiterleitung auf neueSeite.html
         const loginForm = document.getElementById('loginForm');
         loginForm.addEventListener('submit', function(event) {
             event.preventDefault(); // Verhindert das tatsächliche Absenden des Formulars
-            window.location.href = 'loadingscreen.html'; // Leitet zur neuen Seite weiter
+            window.location.href = 'loadingscreen.html'; // Weiterleitung auf eine andere Seite
         });
     </script>
 
