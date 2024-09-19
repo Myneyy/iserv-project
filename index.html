@@ -24,20 +24,20 @@
             color: #333;
         }
         
-        @media (prefers-color-scheme: dark) {
-          /* dunkles Farbschema für die Nacht */
-          body {
-            color: white;
-            background: black;
-          }
-        }
-        @media (prefers-color-scheme: light) {
-          /* helles Farbschema für den Tag */
-            body {
+           /* Standardstil (normales Farbschema) */
+        body {
             color: black;
-            background: white;
+            background-color: white;
+        }
+
+        /* Dunkles Farbschema für die Nacht */
+        @media (prefers-color-scheme: dark) {
+            body {
+                color: white;
+                background-color: black;
             }
         }
+        
         .image-container {
             margin-bottom: 20px;
         }
